@@ -13,7 +13,7 @@ begin
                              where doctor_VAT in(select doctor_VAT
                                                  from consultation
                                                  where year(date_timestamp)=year(now())
-                                                 group by doctor_VAT having count(*)>2));
+                                                 group by doctor_VAT having count(*)>100));
 		
 	update employee 
     set employee_salary = employee_salary + 0.05 * employee_salary
